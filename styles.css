@@ -1,0 +1,270 @@
+/* --- ESTILOS GENERALES --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 25px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    /* Usando Flexbox y align-items */
+    display: flex;
+    flex-direction: column; /* Apila verticalmente */
+    align-items: stretch; /* Estira los hijos para ocupar el ancho (predeterminado si no se especifica) */
+    /* align-items: center; */ /* Descomentar para centrar horizontalmente cada item */
+    /* align-items: flex-start; */ /* Descomentar para alinear a la izquierda */
+}
+
+h1, h2, h3 {
+    color: #0056b3;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 8px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+    color: #343a40;
+    border-bottom-width: 3px;
+    margin-top: 0; /* Sin margen superior para el primer H1 */
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #17a2b8;
+    margin-top: 40px;
+}
+
+h3 {
+    color: #495057;
+    border-bottom: none;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+label {
+    display: inline-block; /* Permite margen */
+    margin-right: 5px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #495057;
+    vertical-align: middle;
+}
+
+/* --- SECCIONES INPUT Y EJERCICIOS --- */
+.input-section, .exercise-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.input-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+.input-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* --- ESTILOS PARA INPUTS --- */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+textarea {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    width: 100%; /* Ocupa el ancho disponible */
+    max-width: 450px; /* Limita el ancho */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input:focus, textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Botones */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button { /* Estilo aplicado también a botones <button> */
+    background-color: #007bff;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-right: 8px;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px); /* Efecto ligero al pasar el ratón */
+}
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active,
+button:active {
+    transform: translateY(0px); /* Efecto al hacer clic */
+}
+
+input[type="reset"] {
+    background-color: #6c757d;
+}
+input[type="reset"]:hover {
+    background-color: #5a6268;
+}
+
+/* Radio y Checkbox */
+.radio-group label, .checkbox-group label {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: -2px; /* Ajuste fino vertical */
+    cursor: pointer;
+}
+
+/* Otros tipos */
+input[type="color"] {
+    padding: 0;
+    width: 60px;
+    height: 35px;
+    vertical-align: middle;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    width: 80%;
+    max-width: 300px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+output { /* Estilo para el output del range */
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #0056b3;
+    min-width: 25px; /* Espacio mínimo */
+    text-align: right;
+}
+
+input[type="file"] {
+    border: 1px solid #ced4da;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #e9ecef;
+    cursor: pointer;
+}
+input[type="file"]::file-selector-button { /* Estilo específico para el botón interno */
+     background-color: #6c757d;
+     color: white;
+     border: none;
+     padding: 6px 12px;
+     border-radius: 4px;
+     cursor: pointer;
+     margin-right: 10px;
+     transition: background-color 0.2s ease;
+}
+input[type="file"]::file-selector-button:hover {
+    background-color: #5a6268;
+}
+
+
+input[type="image"] {
+    border: none;
+    padding: 0;
+    width: 100px; /* Ajusta según tu imagen */
+    height: auto;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+
+/* --- ESTILOS PARA EJERCICIOS --- */
+.exercise-input {
+    margin-bottom: 15px;
+    display: flex; /* Usa flex para alinear labels e inputs */
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
+    gap: 15px; /* Espacio entre elementos */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+.exercise-input label {
+    margin-bottom: 0; /* Quita margen inferior ya que flex maneja el espaciado */
+}
+.exercise-input input[type="number"],
+.exercise-input textarea {
+    width: auto; /* Ancho automático para que se ajusten */
+    flex-grow: 1; /* Permite que crezcan si hay espacio */
+    min-width: 100px; /* Ancho mínimo */
+    margin-bottom: 0;
+}
+.exercise-input textarea {
+     width: 100%; /* Textarea ocupa todo el ancho disponible */
+     min-height: 60px;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 12px 15px;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #343a40;
+    white-space: pre-wrap; /* Mantiene saltos de línea y espacios */
+    word-wrap: break-word; /* Evita desbordamiento horizontal */
+    font-family: "Courier New", Courier, monospace; /* Fuente monoespaciada para resultados */
+    font-size: 0.95em;
+}
+
+.result-scrollable {
+    max-height: 200px; /* Altura máxima para resultados largos */
+    overflow-y: auto; /* Agrega barra de scroll vertical si es necesario */
+}
